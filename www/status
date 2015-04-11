@@ -1,0 +1,8 @@
+<?php
+$code = $_SERVER['QUERY_STRING'];
+if (strlen($code) == 0) {
+	$code = 200;
+}
+http_response_code($code);
+header('Content-Type: text/plain; encoding=UTF-8');
+?>

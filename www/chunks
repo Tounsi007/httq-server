@@ -1,0 +1,13 @@
+<?php
+header('Content-Type: text/plain; encoding=UTF-8');
+$count = (int) $_SERVER['QUERY_STRING'];
+if ($count == 0) {
+	$count = 3;
+}
+for ($i = 1; $i <= $count; $i++) {
+	print("chunk $i\r\n");
+	flush();
+	ob_flush();
+	sleep(1);
+}
+?>
