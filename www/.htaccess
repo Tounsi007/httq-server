@@ -1,3 +1,4 @@
 ForceType application/x-httpd-php
 SetEnv no-gzip 1
+BrowserMatchNoCase "old" nokeepalive force-response-1.0 downgrade-1.0
 
