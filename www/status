@@ -1,8 +1,12 @@
 <?php
 $code = $_SERVER['QUERY_STRING'];
 if (strlen($code) == 0) {
-	$code = 200;
+	http_response_code($code);
+} elseif (strlen($code) == 3) {
+	http_response_code($code);
+} else {
+	$code = urldecode($code);
+	header("HTTP/1.1 $code");
 }
-http_response_code($code);
 header('Content-Type: text/plain; encoding=UTF-8');
 ?>
